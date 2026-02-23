@@ -1,0 +1,124 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.display {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  text-align: right;
+  min-height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+}
+
+.currency {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.error {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--danger);
+  letter-spacing: 0.05em;
+}
+
+/* Quick amounts */
+.quickRow {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.quickBtn {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-subtle);
+  border: 1px solid rgba(0,212,255,0.2);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.05em;
+}
+
+.quickBtn:hover:not(:disabled) {
+  background: rgba(0,212,255,0.12);
+  border-color: var(--accent);
+}
+
+/* Numeric grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.key {
+  padding: 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.key:hover:not(:disabled) {
+  border-color: var(--border-bright);
+  color: var(--accent);
+}
+
+.key:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.clear {
+  color: var(--warning);
+  border-color: rgba(255, 171, 0, 0.2);
+}
+
+.back {
+  color: var(--text-secondary);
+}
+
+.confirmBtn {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  border: none;
+  color: #000;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.confirmBtn:hover:not(:disabled) {
+  background: #33deff;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.confirmBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

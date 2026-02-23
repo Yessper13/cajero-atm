@@ -1,0 +1,272 @@
+.page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  gap: 20px;
+}
+
+/* ─── Header ─── */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.backBtn {
+  background: none; border: none;
+  color: var(--text-muted); font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.06em;
+  cursor: pointer; text-align: left; padding: 0;
+  transition: var(--transition); width: fit-content;
+  margin-bottom: 4px;
+}
+.backBtn:hover { color: var(--text-secondary); }
+
+.title {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700;
+  letter-spacing: 0.08em; color: var(--text-primary);
+  margin: 0;
+}
+
+/* ─── Ícono ─── */
+.mailIcon {
+  font-size: 36px;
+  text-align: center;
+  filter: grayscale(0.3);
+}
+
+/* ─── Info ─── */
+.info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoText {
+  font-size: 13px; color: var(--text-secondary);
+  margin: 0;
+}
+
+.correoDisplay {
+  font-family: var(--font-mono);
+  font-size: 13px; color: var(--accent);
+  letter-spacing: 0.04em; margin: 4px 0 0;
+  word-break: break-all;
+}
+
+.infoHint {
+  font-size: 11px; color: var(--text-muted);
+  font-family: var(--font-mono); letter-spacing: 0.04em;
+  margin: 2px 0 0;
+}
+
+/* ─── Error ─── */
+.errorBanner {
+  background: var(--danger-dim);
+  border: 1px solid rgba(255,61,87,0.3);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--danger); letter-spacing: 0.04em;
+}
+
+/* ─── Campos del código ─── */
+.codigoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.codigoLabel {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--text-muted);
+  letter-spacing: 0.15em;
+  align-self: flex-start;
+  width: 100%;
+  text-align: center;
+}
+
+.codigoCeldas {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.celda {
+  width: 44px; height: 54px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 24px; font-weight: 700;
+  color: var(--text-primary);
+  caret-color: var(--accent);
+  transition: var(--transition);
+  outline: none;
+}
+
+.celda:focus {
+  border-color: rgba(0,212,255,0.5);
+  box-shadow: 0 0 0 3px rgba(0,212,255,0.1);
+}
+
+.celda.celdaLlena {
+  border-color: rgba(0,212,255,0.3);
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.celda.celdaError {
+  border-color: rgba(255,61,87,0.5);
+  box-shadow: 0 0 0 3px rgba(255,61,87,0.08);
+}
+
+.celda:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── Botón principal ─── */
+.primaryBtn {
+  width: 100%; padding: 14px;
+  background: var(--accent); border: none;
+  border-radius: var(--radius-md);
+  color: #000; font-family: var(--font-display);
+  font-size: 14px; font-weight: 700;
+  letter-spacing: 0.12em; cursor: pointer;
+  transition: var(--transition);
+}
+.primaryBtn:hover:not(:disabled) {
+  background: #33deff;
+  box-shadow: 0 0 28px rgba(0,212,255,0.3);
+}
+.primaryBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.loadingRow {
+  display: flex; align-items: center;
+  justify-content: center; gap: 10px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(0,0,0,0.3);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ─── Reenvío ─── */
+.reenvioRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.reenvioText {
+  font-size: 12px; color: var(--text-muted);
+  font-family: var(--font-mono); letter-spacing: 0.03em;
+}
+
+.countdownText {
+  font-family: var(--font-mono);
+  font-size: 12px; color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.reenvioBtn {
+  background: none; border: none;
+  color: var(--accent); font-size: 12px;
+  font-family: var(--font-mono);
+  cursor: pointer; letter-spacing: 0.03em;
+  text-decoration: underline; transition: var(--transition);
+}
+.reenvioBtn:hover:not(:disabled) { color: #33deff; }
+.reenvioBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ─── Cambiar correo ─── */
+.changeEmail { text-align: center; }
+
+.linkBtn {
+  background: none; border: none;
+  color: var(--text-muted); font-size: 11px;
+  cursor: pointer; letter-spacing: 0.03em;
+  font-family: var(--font-mono);
+  text-decoration: underline; transition: var(--transition);
+}
+.linkBtn:hover { color: var(--text-secondary); }
+
+/* ─── Pantalla de éxito ─── */
+.exitoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  animation: fadeSlideIn 0.4s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.exitoIcon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--success-dim);
+  border: 2px solid var(--success);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; color: var(--success);
+}
+
+.exitoTitle {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700;
+  letter-spacing: 0.12em; color: var(--text-primary);
+  margin: 0;
+}
+
+.exitoMsg {
+  font-size: 13px; color: var(--text-secondary);
+  text-align: center; line-height: 1.6; margin: 0;
+}
+
+.numeroCuentaCard {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 6px;
+  position: relative; overflow: hidden;
+}
+
+.numeroCuentaCard::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, var(--accent-subtle) 0%, transparent 60%);
+}
+
+.ncLabel {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+
+.ncValue {
+  font-family: var(--font-mono);
+  font-size: 28px; font-weight: 700;
+  color: var(--accent); letter-spacing: 0.2em;
+}
+
+.ncHint {
+  font-size: 11px; color: var(--text-secondary);
+  letter-spacing: 0.02em; text-align: center;
+}

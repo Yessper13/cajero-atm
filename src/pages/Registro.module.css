@@ -1,0 +1,225 @@
+.page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 18px;
+}
+
+/* ─── Header ─── */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.backBtn {
+  background: none; border: none;
+  color: var(--text-muted); font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.06em;
+  cursor: pointer; text-align: left; padding: 0;
+  transition: var(--transition); width: fit-content;
+}
+.backBtn:hover { color: var(--text-secondary); }
+
+.title {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700;
+  letter-spacing: 0.08em; color: var(--text-primary);
+  margin: 0;
+}
+
+/* ─── Barra de progreso ─── */
+.progressBar {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.progressStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+
+.stepBubble {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.02em;
+  transition: var(--transition);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  z-index: 1;
+}
+
+.stepBubble.active {
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 12px rgba(0,212,255,0.2);
+}
+
+.stepBubble.done {
+  background: var(--success-dim);
+  border-color: var(--success);
+  color: var(--success);
+  font-size: 12px;
+}
+
+.stepBubble.pending {
+  opacity: 0.4;
+}
+
+.stepLabel {
+  font-family: var(--font-mono);
+  font-size: 9px; color: var(--text-muted);
+  letter-spacing: 0.08em; margin-top: 4px;
+  white-space: nowrap;
+}
+.activeLbl { color: var(--accent); }
+
+.stepLine {
+  position: absolute;
+  top: 14px; left: 50%; right: -50%;
+  height: 1px;
+  background: var(--border);
+  transition: background 0.3s;
+  z-index: 0;
+}
+.stepLine.lineDone { background: var(--success); }
+
+/* ─── Error ─── */
+.errorBanner {
+  background: var(--danger-dim);
+  border: 1px solid rgba(255,61,87,0.3);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--danger); letter-spacing: 0.04em;
+}
+
+/* ─── Form paso 1 ─── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.subtitle {
+  font-size: 13px; color: var(--text-secondary);
+  margin: 0; letter-spacing: 0.02em;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--text-muted);
+  letter-spacing: 0.12em;
+}
+
+.input {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 11px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 14px;
+  transition: var(--transition);
+  outline: none;
+}
+
+.input:focus {
+  border-color: rgba(0,212,255,0.4);
+  box-shadow: 0 0 0 3px rgba(0,212,255,0.08);
+}
+
+.input.inputError {
+  border-color: rgba(255,61,87,0.5);
+  box-shadow: 0 0 0 3px rgba(255,61,87,0.08);
+}
+
+.input::placeholder { color: var(--text-muted); }
+
+.hint {
+  font-size: 10px; color: var(--text-muted);
+  letter-spacing: 0.03em; font-family: var(--font-mono);
+}
+
+.fieldError {
+  font-size: 10px; color: var(--danger);
+  letter-spacing: 0.03em; font-family: var(--font-mono);
+}
+
+/* ─── Botones ─── */
+.primaryBtn {
+  width: 100%; padding: 14px;
+  background: var(--accent); border: none;
+  border-radius: var(--radius-md);
+  color: #000; font-family: var(--font-display);
+  font-size: 14px; font-weight: 700;
+  letter-spacing: 0.12em; cursor: pointer;
+  transition: var(--transition);
+  margin-top: 4px;
+}
+.primaryBtn:hover {
+  background: #33deff;
+  box-shadow: 0 0 28px rgba(0,212,255,0.3);
+}
+
+.secondaryBtn {
+  background: none; border: none;
+  color: var(--text-muted); font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.06em;
+  cursor: pointer; transition: var(--transition);
+}
+.secondaryBtn:hover { color: var(--text-secondary); }
+
+/* ─── PIN section ─── */
+.pinSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.pinHint {
+  font-size: 12px; color: var(--text-muted);
+  text-align: center; line-height: 1.6;
+  margin: 0; letter-spacing: 0.02em;
+}
+
+/* ─── Login link ─── */
+.loginLink {
+  text-align: center;
+  font-size: 12px; color: var(--text-muted);
+  letter-spacing: 0.03em;
+  margin-top: auto; padding-top: 8px;
+}
+
+.linkBtn {
+  background: none; border: none;
+  color: var(--accent); font-size: 12px;
+  cursor: pointer; letter-spacing: 0.03em;
+  text-decoration: underline; transition: var(--transition);
+}
+.linkBtn:hover { color: #33deff; }

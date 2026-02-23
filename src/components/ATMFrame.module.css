@@ -1,0 +1,176 @@
+.shell {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 40, 70, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(0, 20, 40, 0.3) 0%, transparent 60%),
+    var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scanline sutil de ambiente */
+.scanline {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0, 212, 255, 0.06) 30%,
+    rgba(0, 212, 255, 0.12) 50%,
+    rgba(0, 212, 255, 0.06) 70%,
+    transparent 100%
+  );
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes scanline {
+  0%   { top: 0; opacity: 1; }
+  90%  { opacity: 0.3; }
+  100% { top: 100vh; opacity: 0; }
+}
+
+.machine {
+  width: min(520px, 96vw);
+  height: min(740px, 97vh);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(0, 212, 255, 0.04),
+    0 32px 80px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  position: relative;
+}
+
+/* ─── Header ─── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  flex-shrink: 0;
+}
+
+.bankLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoMark {
+  font-size: 22px;
+  color: var(--accent);
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
+}
+
+.bankName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+}
+
+.bankTagline {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 8px var(--success);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.statusText {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--success);
+  letter-spacing: 0.12em;
+}
+
+/* ─── Screen ─── */
+.screen {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.screenGlass {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* Borde interior luminoso sutil */
+.screenGlass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0, 212, 255, 0.04);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Footer ─── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-card);
+  flex-shrink: 0;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.secIcon {
+  font-size: 10px;
+}
+
+.footerRight {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}

@@ -1,0 +1,127 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 32px 24px;
+  animation: fadeSlideIn 0.4s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.icon.success { background: var(--success-dim); border: 2px solid var(--success); color: var(--success); }
+.icon.danger  { background: var(--danger-dim);  border: 2px solid var(--danger);  color: var(--danger);  }
+.icon.accent  { background: var(--accent-subtle); border: 2px solid var(--accent); color: var(--accent); }
+
+.iconSymbol { line-height: 1; }
+
+.title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+}
+
+.receipt {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.receiptHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.success { color: var(--success) !important; }
+.danger  { color: var(--danger)  !important; }
+.accent  { color: var(--accent)  !important; }
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.row.highlight .rowValue {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.rowLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.rowValue {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.footerNote {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
